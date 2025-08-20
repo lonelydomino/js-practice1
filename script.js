@@ -151,4 +151,9 @@ const {title, author, pages, publicationDate, genres, hasMovieAdaptation } = boo
 book;
 title;
 author;
-console.log();
+
+
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres
+console.log(primaryGenre, secondaryGenre, otherGenres);
+
+const newGenres = [...genres, "new genre"];
