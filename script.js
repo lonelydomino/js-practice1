@@ -143,46 +143,54 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
+// // const books = getBooks();
+// // const book = getBook(1);
+// // // const title = book.title;
+// // // const author = book.author;
+// // const {title, author, pages, publicationDate, genres, hasMovieAdaptation } = book; // destructuring
+// // book;
+// // title;
+// // author;
+
+
+// // const [primaryGenre, secondaryGenre, ...otherGenres] = genres
+// // console.log(primaryGenre, secondaryGenre, otherGenres);
+
+// // const newGenres = [...genres, "new genre"];
+// // const newGenres2 = [ "new genre", ...genres];
+// // newGenres;
+// // newGenres2
+
+// // const updatedBook = { ...book, moviePublicationDate: "2001-12-19" };
+// // updatedBook;
+
 // const books = getBooks();
-// const book = getBook(1);
-// // const title = book.title;
-// // const author = book.author;
-// const {title, author, pages, publicationDate, genres, hasMovieAdaptation } = book; // destructuring
-// book;
-// title;
-// author;
 
+// const newArray = [1,2,3,4,5].map(num => num * 2);
+// newArray;
+// const newArray2 = [...newArray, 4];
+// newArray2;
 
-// const [primaryGenre, secondaryGenre, ...otherGenres] = genres
-// console.log(primaryGenre, secondaryGenre, otherGenres);
+// const titles = books.map(book => book.title);
+// titles;
 
-// const newGenres = [...genres, "new genre"];
-// const newGenres2 = [ "new genre", ...genres];
-// newGenres;
-// newGenres2
+// const essentialData = books.map(book => ({
+//   title: book.title,
+//   author: book.author,
+//   pages: book.pages,
+// }));
+// essentialData;
 
-// const updatedBook = { ...book, moviePublicationDate: "2001-12-19" };
-// updatedBook;
+// const longBooks = books.filter(book => book.pages > 500);
+// longBooks;
 
-const books = getBooks();
+// const pagesAllBooks = books.reduce((acc, book) => acc + book.pages,  0); 
+// pagesAllBooks
 
-const newArray = [1,2,3,4,5].map(num => num * 2);
-newArray;
-const newArray2 = [...newArray, 4];
-newArray2;
+const fetchData = async () => {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await response.json();
+  console.log(data);
+};
 
-const titles = books.map(book => book.title);
-titles;
-
-const essentialData = books.map(book => ({
-  title: book.title,
-  author: book.author,
-  pages: book.pages,
-}));
-essentialData;
-
-const longBooks = books.filter(book => book.pages > 500);
-longBooks;
-
-const pagesAllBooks = books.reduce((acc, book) => acc + book.pages,  0); 
-pagesAllBooks
+fetchData();
