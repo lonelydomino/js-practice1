@@ -180,3 +180,9 @@ const essentialData = books.map(book => ({
   pages: book.pages,
 }));
 essentialData;
+
+const longBooks = books.filter(book => book.pages > 500);
+longBooks;
+
+const pagesAllBooks = books.reduce((acc, book) => acc + book.pages,  0); 
+pagesAllBooks
